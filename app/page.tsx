@@ -1,3 +1,4 @@
+import HeroCarousel from '@/components/HeroCarousel'
 import Searchbar from '@/components/Searchbar'
 import Image from 'next/image'
 import React from 'react'
@@ -5,7 +6,7 @@ import React from 'react'
 const Home = () => {
   return (
     <>
-      <section className='px-6 md:px-20 py-24 border-2 border-red-500'>
+      <section className='px-6 md:px-20 py-24'>
         <div className="flex max-xl:flex-col gap-16">
           <div className="flex flex-col justify-center">
             <p className="small-text">
@@ -20,7 +21,7 @@ const Home = () => {
 
             <h1 className='head-text'>
               Unleash the Power of
-              <span className='text-primary'>PriceWise</span>
+              <span className='text-primary'> PriceWise</span>
             </h1>
 
             <p className='mt-6'>
@@ -29,7 +30,7 @@ const Home = () => {
           <Searchbar/>
           </div>
 
-          HeroCarousel
+          <HeroCarousel/>
         </div>
       </section>
 
