@@ -83,17 +83,17 @@ const Notification = {
   const transporter = nodemailer.createTransport({
     pool: true,
     service: 'gmail',
-    port: 2525,
-    auth: {
-      user: 'techzip13@gmail.com',
-      pass: process.env.EMAIL_PASSWORD,
+    host: 'smtp.gmail.com',
+    auth: { 
+      user: process.env.EMAIL,
+      pass: process.env.EMAIL_PASSWD,
     },
     maxConnections: 1
   })
   
   export const sendEmail = async (emailContent: EmailContent, sendTo: string[]) => {
     const mailOptions = {
-      from: 'techzip13@gmail.com',
+      from: process.env.EMAIL,
       to: sendTo,
       html: emailContent.body,
       subject: emailContent.subject,

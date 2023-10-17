@@ -4,16 +4,15 @@ import { FormEvent, Fragment, useState } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
 import Image from 'next/image'
 import { addUserEmailToProduct } from '@/lib/actions'
-import { Props } from 'react-responsive-carousel/lib/ts/components/Thumbs'
 
 interface Props {
-    productId: string;
+  productId: string
 }
 
-const Modal = ({productId}: Props) => {
+const Modal = ({ productId }: Props) => {
   let [isOpen, setIsOpen] = useState(true)
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [email, setEmail] = useState('')
+  const [email, setEmail] = useState('');
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -32,11 +31,11 @@ const Modal = ({productId}: Props) => {
 
   return (
     <>
-        <button type='button' className='btn' onClick={openModal}>
-            Track
-        </button>
+      <button type="button" className="btn" onClick={openModal}>
+        Track
+      </button>
 
-        <Transition appear show={isOpen} as={Fragment}>
+      <Transition appear show={isOpen} as={Fragment}>
         <Dialog as="div" onClose={closeModal} className="dialog-container">
           <div className="min-h-screen px-4 text-center">
             <Transition.Child
@@ -112,8 +111,8 @@ const Modal = ({productId}: Props) => {
                       required
                       type="email"
                       id="email"
-                    //   value={email}
-                    //   onChange={(e) => setEmail(e.target.value)}
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
                       placeholder="Enter your email address"
                       className='dialog-input'
                     />
